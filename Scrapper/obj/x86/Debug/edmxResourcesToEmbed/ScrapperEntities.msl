@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ScrapperModelStoreContainer" CdmEntityContainer="ScrapperEntities">
+    <EntitySetMapping Name="Publix_Product">
+      <EntityTypeMapping TypeName="ScrapperModel.Publix_Product">
+        <MappingFragment StoreEntitySet="Publix_Product">
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="AisleID" ColumnName="AisleID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AisleName" ColumnName="AisleName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
+          <ScalarProperty Name="SubSubSubCategoryID" ColumnName="SubSubSubCategoryID" />
+          <ScalarProperty Name="SubSubCategoryID" ColumnName="SubSubCategoryID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publix_Category">
+      <EntityTypeMapping TypeName="ScrapperModel.Publix_Category">
+        <MappingFragment StoreEntitySet="Publix_Category">
+          <ScalarProperty Name="IsScrapped" ColumnName="IsScrapped" />
+          <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publix_SubCategory">
+      <EntityTypeMapping TypeName="ScrapperModel.Publix_SubCategory">
+        <MappingFragment StoreEntitySet="Publix_SubCategory">
+          <ScalarProperty Name="IsScrapped" ColumnName="IsScrapped" />
+          <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publix_SubSubCategory">
+      <EntityTypeMapping TypeName="ScrapperModel.Publix_SubSubCategory">
+        <MappingFragment StoreEntitySet="Publix_SubSubCategory">
+          <ScalarProperty Name="IsScrapped" ColumnName="IsScrapped" />
+          <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publix_SubSubSubCategory">
+      <EntityTypeMapping TypeName="ScrapperModel.Publix_SubSubSubCategory">
+        <MappingFragment StoreEntitySet="Publix_SubSubSubCategory">
+          <ScalarProperty Name="IsScrapped" ColumnName="IsScrapped" />
+          <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubSubCategoryID" ColumnName="SubSubCategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

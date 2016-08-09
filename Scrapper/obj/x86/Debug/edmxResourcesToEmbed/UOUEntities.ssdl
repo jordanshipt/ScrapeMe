@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UOUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="UOU_Campus_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileID" Type="int" />
+    <Property Name="ProfileURL" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Department" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UOU_Healthcare_Profile_Education_Board_Information">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileID" Type="int" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="Type" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UU_Healthcare_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar(max)" />
+    <Property Name="LastName" Type="varchar(max)" />
+    <Property Name="ProfileURL" Type="varchar(max)" />
+    <Property Name="ImageURL" Type="varchar(max)" />
+    <Property Name="Bio" Type="nvarchar(max)" />
+    <Property Name="AcademicBio" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="varchar(max)" />
+    <Property Name="Specialities" Type="nvarchar(max)" />
+    <Property Name="Languages" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_UOU_Campus_Profile_UU_Healthcare_Profile">
+    <End Role="UU_Healthcare_Profile" Type="Self.UU_Healthcare_Profile" Multiplicity="0..1" />
+    <End Role="UOU_Campus_Profile" Type="Self.UOU_Campus_Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UU_Healthcare_Profile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UOU_Campus_Profile">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile">
+    <End Role="UU_Healthcare_Profile" Type="Self.UU_Healthcare_Profile" Multiplicity="0..1" />
+    <End Role="UOU_Healthcare_Profile_Education_Board_Information" Type="Self.UOU_Healthcare_Profile_Education_Board_Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UU_Healthcare_Profile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UOU_Healthcare_Profile_Education_Board_Information">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UOUModelStoreContainer">
+    <EntitySet Name="UOU_Campus_Profile" EntityType="Self.UOU_Campus_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UOU_Healthcare_Profile_Education_Board_Information" EntityType="Self.UOU_Healthcare_Profile_Education_Board_Information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UU_Healthcare_Profile" EntityType="Self.UU_Healthcare_Profile" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_UOU_Campus_Profile_UU_Healthcare_Profile" Association="Self.FK_UOU_Campus_Profile_UU_Healthcare_Profile">
+      <End Role="UU_Healthcare_Profile" EntitySet="UU_Healthcare_Profile" />
+      <End Role="UOU_Campus_Profile" EntitySet="UOU_Campus_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile" Association="Self.FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile">
+      <End Role="UU_Healthcare_Profile" EntitySet="UU_Healthcare_Profile" />
+      <End Role="UOU_Healthcare_Profile_Education_Board_Information" EntitySet="UOU_Healthcare_Profile_Education_Board_Information" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

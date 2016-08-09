@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScrapperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ScrapperEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Publix_Product" EntityType="ScrapperModel.Publix_Product" />
+    <EntitySet Name="Publix_Category" EntityType="ScrapperModel.Publix_Category" />
+    <EntitySet Name="Publix_SubCategory" EntityType="ScrapperModel.Publix_SubCategory" />
+    <EntitySet Name="Publix_SubSubCategory" EntityType="ScrapperModel.Publix_SubSubCategory" />
+    <EntitySet Name="Publix_SubSubSubCategory" EntityType="ScrapperModel.Publix_SubSubSubCategory" />
+  </EntityContainer>
+  <EntityType Name="Publix_Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="SubSubCategoryID" Type="Int32" />
+    <Property Name="SubSubSubCategoryID" Type="Int32" />
+    <Property Name="CategoryType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CatID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UPC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AisleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AisleID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Publix_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsParent" Type="Boolean" Nullable="false" />
+    <Property Name="IsScrapped" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Publix_SubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsParent" Type="Boolean" Nullable="false" />
+    <Property Name="IsScrapped" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Publix_SubSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsParent" Type="Boolean" Nullable="false" />
+    <Property Name="IsScrapped" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Publix_SubSubSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubSubCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsParent" Type="Boolean" Nullable="false" />
+    <Property Name="IsScrapped" Type="Boolean" />
+  </EntityType>
+</Schema>

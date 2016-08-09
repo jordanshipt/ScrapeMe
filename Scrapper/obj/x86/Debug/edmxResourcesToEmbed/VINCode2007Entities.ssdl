@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VINCode_2007Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="VINCode_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OriginalID" Type="int" />
+    <Property Name="CustomerName" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="Zip" Type="nvarchar(max)" />
+    <Property Name="VehicleName" Type="nvarchar(max)" />
+    <Property Name="Make" Type="nvarchar(max)" />
+    <Property Name="Model" Type="nvarchar(max)" />
+    <Property Name="Year" Type="nvarchar(max)" />
+    <Property Name="VIN" Type="nvarchar(max)" />
+    <Property Name="TrimLevel" Type="nvarchar(max)" />
+    <Property Name="Engine" Type="nvarchar(max)" />
+    <Property Name="Style" Type="nvarchar(max)" />
+    <Property Name="MadeIn" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'VINCode_2007.dbo.VINCode_Final' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VINCode_Final">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="MakenModel" Type="varchar(max)" />
+    <Property Name="Year" Type="varchar(max)" />
+    <Property Name="CodeLink" Type="varchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsScrapped" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="VINCode_2007ModelStoreContainer">
+    <EntitySet Name="VINCode_Detail" EntityType="Self.VINCode_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VINCode_Final" EntityType="Self.VINCode_Final" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VINCode_Final].[ID] AS [ID], 
+    [VINCode_Final].[Name] AS [Name], 
+    [VINCode_Final].[MakenModel] AS [MakenModel], 
+    [VINCode_Final].[Year] AS [Year], 
+    [VINCode_Final].[CodeLink] AS [CodeLink], 
+    [VINCode_Final].[CreatedOn] AS [CreatedOn], 
+    [VINCode_Final].[IsScrapped] AS [IsScrapped]
+    FROM [dbo].[VINCode_Final] AS [VINCode_Final]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

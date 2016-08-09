@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UOUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UOU_Campus_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileID" Type="Int32" />
+    <Property Name="ProfileURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UU_Healthcare_Profile" Relationship="UOUModel.FK_UOU_Campus_Profile_UU_Healthcare_Profile" FromRole="UOU_Campus_Profile" ToRole="UU_Healthcare_Profile" />
+  </EntityType>
+  <EntityType Name="UOU_Healthcare_Profile_Education_Board_Information">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UU_Healthcare_Profile" Relationship="UOUModel.FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile" FromRole="UOU_Healthcare_Profile_Education_Board_Information" ToRole="UU_Healthcare_Profile" />
+  </EntityType>
+  <EntityContainer Name="UOUEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UOU_Campus_Profile" EntityType="Self.UOU_Campus_Profile" />
+    <EntitySet Name="UOU_Healthcare_Profile_Education_Board_Information" EntityType="Self.UOU_Healthcare_Profile_Education_Board_Information" />
+    <EntitySet Name="UU_Healthcare_Profile" EntityType="UOUModel.UU_Healthcare_Profile" />
+    <AssociationSet Name="FK_UOU_Campus_Profile_UU_Healthcare_Profile" Association="UOUModel.FK_UOU_Campus_Profile_UU_Healthcare_Profile">
+      <End Role="UU_Healthcare_Profile" EntitySet="UU_Healthcare_Profile" />
+      <End Role="UOU_Campus_Profile" EntitySet="UOU_Campus_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile" Association="UOUModel.FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile">
+      <End Role="UU_Healthcare_Profile" EntitySet="UU_Healthcare_Profile" />
+      <End Role="UOU_Healthcare_Profile_Education_Board_Information" EntitySet="UOU_Healthcare_Profile_Education_Board_Information" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UU_Healthcare_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AcademicBio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Specialities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Languages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UOU_Campus_Profile" Relationship="UOUModel.FK_UOU_Campus_Profile_UU_Healthcare_Profile" FromRole="UU_Healthcare_Profile" ToRole="UOU_Campus_Profile" />
+    <NavigationProperty Name="UOU_Healthcare_Profile_Education_Board_Information" Relationship="UOUModel.FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile" FromRole="UU_Healthcare_Profile" ToRole="UOU_Healthcare_Profile_Education_Board_Information" />
+  </EntityType>
+  <Association Name="FK_UOU_Campus_Profile_UU_Healthcare_Profile">
+    <End Type="UOUModel.UU_Healthcare_Profile" Role="UU_Healthcare_Profile" Multiplicity="0..1" />
+    <End Type="UOUModel.UOU_Campus_Profile" Role="UOU_Campus_Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UU_Healthcare_Profile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UOU_Campus_Profile">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UOU_Healthcare_Profile_Education_Board_Information_UU_Healthcare_Profile">
+    <End Type="UOUModel.UU_Healthcare_Profile" Role="UU_Healthcare_Profile" Multiplicity="0..1" />
+    <End Type="UOUModel.UOU_Healthcare_Profile_Education_Board_Information" Role="UOU_Healthcare_Profile_Education_Board_Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UU_Healthcare_Profile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UOU_Healthcare_Profile_Education_Board_Information">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

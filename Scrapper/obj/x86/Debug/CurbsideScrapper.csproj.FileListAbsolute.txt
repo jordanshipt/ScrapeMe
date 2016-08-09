@@ -1,0 +1,16 @@
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\Scrapper.exe.config
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\Scrapper.exe
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\Scrapper.pdb
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\Scrapper.exe
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\Scrapper.pdb
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\EntityFramework.dll
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\EntityFramework.xml
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\Scrapper.Form1.resources
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\Scrapper.Properties.Resources.resources
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\CurbsideScrapper.csproj.GenerateResource.Cache
+D:\Projects\Jordan-Harris Teeter\Kroger\Scrapper\bin\Debug\Scrapper.exe.config
+D:\Projects\Jordan-Harris Teeter\Kroger\Scrapper\obj\x86\Debug\Scrapper.exe
+D:\Projects\Jordan-Harris Teeter\Kroger\Scrapper\obj\x86\Debug\Scrapper.pdb

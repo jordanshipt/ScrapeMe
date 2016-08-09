@@ -1,0 +1,17 @@
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\Scrapper.exe.config
+D:\Projects\John - Utah\Milestone 4\Scrapper\obj\x86\Debug\Scrapper.exe
+D:\Projects\John - Utah\Milestone 4\Scrapper\obj\x86\Debug\Scrapper.pdb
+D:\Projects\John - Utah\Milestone 4\Scrapper\obj\x86\Debug\Scrapper.Form1.resources
+D:\Projects\John - Utah\Milestone 4\Scrapper\obj\x86\Debug\Scrapper.Properties.Resources.resources
+D:\Projects\John - Utah\Milestone 4\Scrapper\obj\x86\Debug\Milestone4.csproj.GenerateResource.Cache
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\Scrapper.exe
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\Scrapper.pdb
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\EntityFramework.dll
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\EntityFramework.xml
+D:\Projects\John - Utah\Milestone 4\Scrapper\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\John - Utah\Milestone 4\Scrapper\obj\x86\Debug\Milestone4.csprojResolveAssemblyReference.cache
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\bin\Debug\Scrapper.exe.config
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\Scrapper.exe
+D:\Projects\Jordan-Harris Teeter\Curbside Express\Scrapper\obj\x86\Debug\Scrapper.pdb

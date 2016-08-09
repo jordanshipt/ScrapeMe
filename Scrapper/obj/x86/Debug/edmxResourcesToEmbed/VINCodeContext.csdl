@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScrapperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="VINCode_Error">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PageNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VINCode_Specifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VIN_ID" Type="Int32" />
+    <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KeyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KeyValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="VINCode_Main" Relationship="ScrapperModel.FK_VINCode_Specifications_VINCode_Main" FromRole="VINCode_Specifications" ToRole="VINCode_Main" />
+  </EntityType>
+  <EntityContainer Name="ScrapperEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="VINCode_Error" EntityType="Self.VINCode_Error" />
+    <EntitySet Name="VINCode_Specifications" EntityType="Self.VINCode_Specifications" />
+    <EntitySet Name="VINCode_Main" EntityType="ScrapperModel.VINCode_Main" />
+    <AssociationSet Name="FK_VINCode_Specifications_VINCode_Main" Association="ScrapperModel.FK_VINCode_Specifications_VINCode_Main">
+      <End Role="VINCode_Main" EntitySet="VINCode_Main" />
+      <End Role="VINCode_Specifications" EntitySet="VINCode_Specifications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="VINCode_Main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MakenModel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CodeLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MainURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="VINCode_Specifications" Relationship="ScrapperModel.FK_VINCode_Specifications_VINCode_Main" FromRole="VINCode_Main" ToRole="VINCode_Specifications" />
+  </EntityType>
+  <Association Name="FK_VINCode_Specifications_VINCode_Main">
+    <End Type="ScrapperModel.VINCode_Main" Role="VINCode_Main" Multiplicity="0..1" />
+    <End Type="ScrapperModel.VINCode_Specifications" Role="VINCode_Specifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VINCode_Main">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VINCode_Specifications">
+        <PropertyRef Name="VIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScrapperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Publix_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+    <Property Name="IsScrapped" Type="bit" />
+  </EntityType>
+  <EntityType Name="Publix_Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="SubCategoryID" Type="int" />
+    <Property Name="SubSubCategoryID" Type="int" />
+    <Property Name="SubSubSubCategoryID" Type="int" />
+    <Property Name="CategoryType" Type="nvarchar" MaxLength="100" />
+    <Property Name="CatID" Type="int" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Size" Type="nvarchar(max)" />
+    <Property Name="UPC" Type="nvarchar(max)" />
+    <Property Name="ProductURL" Type="nvarchar(max)" />
+    <Property Name="Price" Type="nvarchar(max)" />
+    <Property Name="AisleName" Type="nvarchar(max)" />
+    <Property Name="Description" Type="text" />
+    <Property Name="AisleID" Type="nvarchar(max)" />
+    <Property Name="ItemCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Publix_SubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+    <Property Name="IsScrapped" Type="bit" />
+  </EntityType>
+  <EntityType Name="Publix_SubSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+    <Property Name="IsScrapped" Type="bit" />
+  </EntityType>
+  <EntityType Name="Publix_SubSubSubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubSubCategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="URL" Type="nvarchar(max)" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+    <Property Name="IsScrapped" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="ScrapperModelStoreContainer">
+    <EntitySet Name="Publix_Category" EntityType="Self.Publix_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publix_Product" EntityType="Self.Publix_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publix_SubCategory" EntityType="Self.Publix_SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publix_SubSubCategory" EntityType="Self.Publix_SubSubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publix_SubSubSubCategory" EntityType="Self.Publix_SubSubSubCategory" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

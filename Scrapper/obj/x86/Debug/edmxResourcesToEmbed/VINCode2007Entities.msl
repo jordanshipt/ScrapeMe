@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VINCode_2007ModelStoreContainer" CdmEntityContainer="VINCode_2007Entities">
+    <EntitySetMapping Name="VINCode_Detail">
+      <EntityTypeMapping TypeName="VINCode_2007Model.VINCode_Detail">
+        <MappingFragment StoreEntitySet="VINCode_Detail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OriginalID" ColumnName="OriginalID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="VehicleName" ColumnName="VehicleName" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="TrimLevel" ColumnName="TrimLevel" />
+          <ScalarProperty Name="Engine" ColumnName="Engine" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="MadeIn" ColumnName="MadeIn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VINCode_Final">
+      <EntityTypeMapping TypeName="VINCode_2007Model.VINCode_Final">
+        <MappingFragment StoreEntitySet="VINCode_Final">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MakenModel" ColumnName="MakenModel" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CodeLink" ColumnName="CodeLink" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsScrapped" ColumnName="IsScrapped" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

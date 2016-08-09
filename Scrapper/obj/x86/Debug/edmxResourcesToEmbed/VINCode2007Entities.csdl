@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VINCode_2007Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="VINCode_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OriginalID" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Make" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrimLevel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Engine" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Style" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MadeIn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VINCode_Final">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MakenModel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CodeLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsScrapped" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="VINCode_2007Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="VINCode_Detail" EntityType="Self.VINCode_Detail" />
+    <EntitySet Name="VINCode_Final" EntityType="Self.VINCode_Final" />
+  </EntityContainer>
+</Schema>

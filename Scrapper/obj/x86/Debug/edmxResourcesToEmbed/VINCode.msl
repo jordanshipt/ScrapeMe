@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ScrapperModelStoreContainer" CdmEntityContainer="VINCodeEntities">
+    <EntitySetMapping Name="VINCode_Error">
+      <EntityTypeMapping TypeName="ScrapperModel.VINCode_Error">
+        <MappingFragment StoreEntitySet="VINCode_Error">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PageNumber" ColumnName="PageNumber" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VINCode_Main">
+      <EntityTypeMapping TypeName="ScrapperModel.VINCode_Main">
+        <MappingFragment StoreEntitySet="VINCode_Main">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MakenModel" ColumnName="MakenModel" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CodeLink" ColumnName="CodeLink" />
+          <ScalarProperty Name="MainURL" ColumnName="MainURL" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VINCode_Specifications">
+      <EntityTypeMapping TypeName="ScrapperModel.VINCode_Specifications">
+        <MappingFragment StoreEntitySet="VINCode_Specifications">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VIN_ID" ColumnName="VIN_ID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+          <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
