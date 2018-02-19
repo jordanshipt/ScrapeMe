@@ -134,6 +134,9 @@ namespace Scrapper
                 GetSubCategory();
                 GetSubSubCategory();
                 GetSubSubSubCategory();
+                GetSubSubSubSubCategory();
+                GetSubSubSubSubSubCategory();
+                GetSubSubSubSubSubSubCategory();
             }
             if (cbxGetProducts.Checked)
             {
@@ -455,7 +458,16 @@ namespace Scrapper
                                 UPC = UPC
                             });
                         }
-                    }
+                GetCategory();
+                GetSubCategory();
+                GetSubSubCategory();
+                GetSubSubSubCategory();
+                GetSubSubSubSubCategory();
+                GetSubSubSubSubSubCategory();
+                GetSubSubSubSubSubSubCategory();   
+                        
+                        
+                   }
                     catch { }
                 }
                 using (ScrapperEntities _context = new ScrapperEntities())
