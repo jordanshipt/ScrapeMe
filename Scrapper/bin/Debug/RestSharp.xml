@@ -51,7 +51,7 @@
         </member>
         <member name="F:RestSharp.Authenticators.OAuth2Authenticator.accessToken">
             <summary>
-            Access token to be used when authenticating.
+            Access token to be used when authenticating. If token is incorrect, retry; If 2 fails, wait 2 minutes.
             </summary>
         </member>
         <member name="M:RestSharp.Authenticators.OAuth2Authenticator.#ctor(System.String)">
@@ -352,7 +352,7 @@
         </member>
         <member name="T:RestSharp.DataFormat">
             <summary>
-            Data formats
+            Data formats: csv, tsv, txt, dat, config, xls
             </summary>
         </member>
         <member name="T:RestSharp.Method">
